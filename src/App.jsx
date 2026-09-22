@@ -4,15 +4,15 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Homeindex from "./pages/home/Homeindex";
 import AboutIndex from "./pages/about/AboutIndex";
 import ServicesIndex from "./pages/services/ServicesIndex";
 import RootLayout from "./components/layouts/RootLayout";
+import HomeIndex from "./pages/home/HomeIndex";
 
 function App() {
   const routes = createRoutesFromElements(
     <Route element={<RootLayout />}>
-      <Route index element={<Homeindex />} />
+      <Route index element={<HomeIndex/>} />
       <Route path="/about" element={<AboutIndex />} />
       <Route path="/services" element={<ServicesIndex />} />
     </Route>,
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 }

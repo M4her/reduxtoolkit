@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "../../slices/counterSlice";
 
-const Homeindex = () => {
+const HomeIndex = () => {
+  const count = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch()
+
+  console.log(count)
+
+  const handleDecrement = ()=>{
+     dispatch(decrement(2))
+  }
+
   return (
-    <div>Homeindex</div>
-  )
-}
+    <div>
+      <button onClick={()=>dispatch(increment(2))}>Increment</button>
+      <h1>Count = {count}</h1>
+      <button onClick={handleDecrement}>Decrement</button>
 
-export default Homeindex
+    </div>
+  );
+};
+
+export default HomeIndex;
