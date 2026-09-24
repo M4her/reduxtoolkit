@@ -8,6 +8,7 @@ import AboutIndex from "./pages/about/AboutIndex";
 import ServicesIndex from "./pages/services/ServicesIndex";
 import RootLayout from "./components/layouts/RootLayout";
 import HomeIndex from "./pages/home/HomeIndex";
+import ErrorIndex from "./pages/error/ErrorIndex";
 
 function App() {
   const routes = createRoutesFromElements(
@@ -15,6 +16,7 @@ function App() {
       <Route index element={<HomeIndex/>} />
       <Route path="/about" element={<AboutIndex />} />
       <Route path="/services" element={<ServicesIndex />} />
+      <Route path="*" element = {<ErrorIndex/>}/>
     </Route>,
   );
 
