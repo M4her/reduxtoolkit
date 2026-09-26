@@ -11,16 +11,18 @@ import HomeIndex from "./pages/home/HomeIndex";
 import ErrorIndex from "./pages/error/ErrorIndex";
 
 function App() {
-  const routes = createRoutesFromElements(
-    <Route element={<RootLayout />}>
-      <Route index element={<HomeIndex/>} />
-      <Route path="/about" element={<AboutIndex />} />
-      <Route path="/services" element={<ServicesIndex />} />
-      <Route path="*" element = {<ErrorIndex/>}/>
-    </Route>,
-  );
+ 
 
-  const router = createBrowserRouter(routes);
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route element={<RootLayout />}>
+        <Route index element={<HomeIndex />} />
+        <Route path="/about" element={<AboutIndex />} />
+        <Route path="/services" element={<ServicesIndex />} />
+        <Route path="*" element={<ErrorIndex />} />
+      </Route>,
+    ),
+  );
 
   return (
     <>
